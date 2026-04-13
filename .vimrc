@@ -1,3 +1,10 @@
+" Плагины
+call plug#begin('~/.vim/plugged')
+
+Plug 'dense-analysis/ale'
+
+call plug#end()
+
 " Нумерация строк
 set number
 
@@ -35,3 +42,15 @@ nnoremap <C-l> <C-w>l
 
 set mouse=a
 set clipboard=unnamedplus
+
+" Подсветка ошибок в коде (линтер)
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+
+" Подсветка ошибки сразу
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_insert_leave = 1
+
+" Цвета ошибок
+highlight ALEError ctermfg=red guifg=red
+highlight ALEWarning ctermfg=yellow guifg=yellow
